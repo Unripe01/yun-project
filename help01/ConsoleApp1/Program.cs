@@ -11,8 +11,7 @@ namespace ConsoleApp1
         {
             //1文字を特定のルールに従って2段階変化するような要件に応えるコード
 
-            //ファイル読み込んだ
-            //ベタな変換方法
+            //予め決まっているルールを利用する方法
             var readLine = "12";
             foreach (var item in readLine)
             {
