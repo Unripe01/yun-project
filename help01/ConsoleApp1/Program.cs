@@ -9,7 +9,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            var myMap = MyMap.GetMap();
+            //1文字を特定のルールに従って2段階変化するような要件に応えるコード
 
             //ファイル読み込んだ
             //ベタな変換方法
