@@ -9,38 +9,38 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //ファイルを想定
-            const string FILE = "1234567890ABCDEFGHIJ";
+            var myMap = MyMap.GetMap();
 
-            //変換先を想定
-            const string CHANGE = ".?<>#!'()|abcdefghij";
-
-            //変換リスト作成
-            Dictionary<char, char> myDic = new Dictionary<char, char>();
-            var i = 0;
-            foreach (var item in FILE)
+            //ファイル読み込んだ
+            //ベタな変換方法
+            var readLine = "12";
+            foreach (var item in readLine)
             {
-                myDic.Add(item, CHANGE[i]);
-                i++;
+                var changer = new Item(item);
+                Console.WriteLine(changer.ToCommonFormat());
+                Console.WriteLine(changer.ToLastFormat());
+                //00001
+                //this is 00001 !
+                //00002
+                //this is 00002 !
             }
 
-            //変換確認
-            Console.WriteLine(myDic['1']);
-            Console.WriteLine(myDic['2']);
-            Console.WriteLine(myDic['3']);
-            Console.WriteLine(myDic['4']);
-            Console.WriteLine(myDic['A']);
-            Console.WriteLine(myDic['B']);
-            Console.WriteLine(myDic['C']);
-            //->>> log
-            //?
-            //<
-            //>
-            //a
-            //b
-            //c
-
-
+            //高度な変換、ルールを外から与える
+            var readLine2 = "AB";
+            foreach (var item in readLine2)
+            {
+                //こんな風に直接ラムダ式を書くのもあり
+                //var changer = new Item(item, (char c) => { return "aaaa"; }, (string c) => { return "aaaa"; });
+                var changer = new Item(item, new Rules().Rule1ofCommon, new Rules().Rule1ofLast);
+                Console.WriteLine(changer.ToCommonFormat());
+                Console.WriteLine(changer.ToLastFormat());
+                //a
+                //★a★
+                //b
+                //★b★
+            }
         }
+
+
     }
 }
