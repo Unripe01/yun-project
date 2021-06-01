@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
 
 namespace ConsoleApp1
 {
@@ -7,19 +10,37 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             //ファイルを想定
-            const string FILE = 
-@"1234567890
-ABCDEFGHIJ";
+            const string FILE = "1234567890ABCDEFGHIJ";
 
-            //ハッシュテーブルを想定
-            var myHash = new HashCode();
+            //変換先を想定
+            const string CHANGE = ".?<>#!'()|abcdefghij";
 
-            //ROW
-            var f = FILE.Split();
+            //変換リスト作成
+            Dictionary<char, char> myDic = new Dictionary<char, char>();
+            var i = 0;
+            foreach (var item in FILE)
+            {
+                myDic.Add(item, CHANGE[i]);
+                i++;
+            }
+
+            //変換確認
+            Console.WriteLine(myDic['1']);
+            Console.WriteLine(myDic['2']);
+            Console.WriteLine(myDic['3']);
+            Console.WriteLine(myDic['4']);
+            Console.WriteLine(myDic['A']);
+            Console.WriteLine(myDic['B']);
+            Console.WriteLine(myDic['C']);
+            //->>> log
+            //?
+            //<
+            //>
+            //a
+            //b
+            //c
 
 
-
-            //COLUMN（item）
         }
     }
 }
