@@ -57,7 +57,7 @@ namespace ConsoleApp1
         /// </summary>
         public string ToCommonFormat()
         {
-            return _ruleOfCommon(this._OriginalValue);
+            return this._ruleOfCommon(this._OriginalValue);
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace ConsoleApp1
         /// </summary>
         public string ToLastFormat()
         {
-            return _ruleOfLast(this.ToCommonFormat());
+            return this._ruleOfLast(this.ToCommonFormat());
         }
     }
 }
