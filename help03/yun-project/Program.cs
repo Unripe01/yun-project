@@ -49,6 +49,15 @@ namespace yun_project
                     }
                 }
             }
+
+            //実行結果
+                //parent - 11118888
+                //child - 1111XXXX
+                //parent - 22221111
+                //parent - 44440000
+                //parent - 44448888
+                //child - 44443333
+
         }
     }
 
